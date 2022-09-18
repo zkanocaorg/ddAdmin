@@ -68,9 +68,9 @@ class Uyeler extends CI_Controller {
 		$config['prev_tag_close'] = '</li>';
 		$config['cur_tag_open'] = '<li class="active page-item"><a class="page-link"  href="#">';
 		$config['cur_tag_close'] = '</a></li>';
-		$config['num_tag_open'] = '<li>';
+		$config['num_tag_open'] = '<li class="page-item">';
 		$config['num_tag_close'] = '</li>';
-		$config['num_links'] = 010;
+		$config['num_links'] = 5;
 
 		$this->pagination->initialize($config);
 		$page = $this->uri->segment(3);

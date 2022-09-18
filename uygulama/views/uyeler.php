@@ -15,16 +15,21 @@
 				success: function (data) {
 					$('#uyeler_table').html(data.uyeler_table);
 					$('#pagination_link').html(data.pagination_link);
+					$('li.page-item a').attr("class", "page-link");
 				}
 			})
+
 		}
 
 		load_uyeler(1);
+
+
 
 		$(document).on("click", ".pagination li a", function (event) {
 			event.preventDefault();
 			let page = $(this).data("ci-pagination-page");
 			load_uyeler(page);
+
 
 		});
 	});

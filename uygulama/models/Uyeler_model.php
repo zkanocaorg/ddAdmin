@@ -49,19 +49,21 @@ class Uyeler_model extends CI_Model
 			->limit($limit, $start);
 		$query = $this->db->get();
 
-		$output .= '<table class="table table-bordered">
+		$output .= '<table class="table table-striped">
+<thead class="thead-dark">
    <tr>
-    <th>Adı Soyadı <br> <small>Kullanıcı adı</small></th>
-    <th>e-posta</th>
+    <th>Adı Soyadı <br> <small>Eposta Adresi</small></th>
+    <th>Telefon</th>
     <th>İlçe / Şehir</th>
     <th>Üyelik tarihi</th>
     <th>Son Giriş Tarihi</th>
     <th>İşlemler</th>
-    </tr>';
+    </tr>
+    </thead>';
 
 
 		foreach ($query->result() as $row) {
-			$output .= '<tr id="tr-uye-' . $row->uyeID . '"><td>' . $row->ad . '<br><small>'.$row->kad.'</small></td><td>' . $row->email . '</td><td>' . $row->ilceAdi . ' / ' . $row->ilAdi . '</td>
+			$output .= '<tr id="tr-uye-' . $row->uyeID . '"><td>' . $row->ad . '<br><small>' . $row->email . '</small></td><td>' . $row->ceptel . '</td><td>' . $row->ilceAdi . ' / ' . $row->ilAdi . '</td>
 <td>' . $row->tarih_2 . '</td>
 <td>' . $row->son_giris . '</td>
  
